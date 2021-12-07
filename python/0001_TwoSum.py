@@ -1,3 +1,4 @@
+#python 判断key在不在字典里 可以用dict.has_key 也可以用 key in dict 
 class Solution(object):
     def twoSum(self, nums, target):
         """
