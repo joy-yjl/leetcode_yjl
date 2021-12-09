@@ -1,6 +1,7 @@
 /*
 判断好条件就行
 */
+/*
 class Solution {
 public:
     int myAtoi(string s) {
@@ -50,5 +51,42 @@ public:
         }
         return res*m;
         
+    }
+};
+ */
+
+class Solution {
+public:
+    int myAtoi(string str) {
+        int i=0;
+        long long int res=0;
+        while(str[i]==' ')
+            i++;
+        int flag=1;
+        if(str[i]=='-'||str[i]=='+')
+        {
+            if(str[i]=='-')
+                flag=-1;
+            i++;
+        }
+
+        for(;i<str.size();i++)
+        {
+            if(str[i]<'0' || str[i]>'9')
+                break;
+            res=res*10+(str[i]-'0');
+            if (res*flag>INT_MAX||res*flag<INT_MIN)
+                break;
+        }
+        //cout<<res<<endl;
+        res=res*flag;
+        if(res>INT_MAX)
+            res=INT_MAX;
+        if(res<INT_MIN)
+            res=INT_MIN;
+
+        return res;
+
+
     }
 };
