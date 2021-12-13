@@ -7,7 +7,7 @@ public:
     	int i=0,j=height.size()-1;
     	while(j>i)
     	{
-            int tmp=(j-i)*min(height[i],height[j]);
+            int tmp=(right-left)*(height[left]>height[right]?height[right]:height[left]);
             if(tmp>res)
             	res=tmp;
             height[i]<height[j]?i++:j--;

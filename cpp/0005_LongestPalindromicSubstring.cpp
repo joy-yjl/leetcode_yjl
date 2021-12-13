@@ -50,6 +50,8 @@ public:
 外层循环是字符串的位置 
 里层循环是扩展
 
+时间复杂度O(n)
+
 */
 
 class Solution {
