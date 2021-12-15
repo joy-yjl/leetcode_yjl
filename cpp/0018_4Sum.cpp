@@ -1,9 +1,12 @@
 /*
-先排序，再递归，再用双指针，注意cur vector的处理
+因为有case
+[1000000000,1000000000,1000000000,1000000000]
+0
+所以删去了一个判断也就是注释部分
 */
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums,int k,int target) {
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
         vector<vector<int>> res;
         if(nums.empty())
             return res;
@@ -11,15 +14,15 @@ public:
         sort(nums.begin(),nums.end());
 
         vector<int> cur;
-        dfs_find(nums,nums.size(),0,target,k,cur,res);
+        dfs_find(nums,nums.size(),0,target,4,cur,res);
 
         return res;
+        
     }
-
     void dfs_find(vector<int> & nums, int len,int start,int target,int k,vector<int> &cur,vector<vector<int>> & res)
     {
-        if(target<k*nums.front() || target>k*nums.back())
-            return;
+        // if(target<k*nums.front() || target>k*nums.back())
+        //     return;
 
         if(k==2)
         {
