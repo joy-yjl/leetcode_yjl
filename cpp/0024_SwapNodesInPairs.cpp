@@ -34,7 +34,7 @@ public:
             head=tmp;
 
         }
-        cout<<res<<endl;
+        cur->next=nullptr;
         return res;
         
     }
